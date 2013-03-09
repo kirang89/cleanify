@@ -8,6 +8,8 @@ Everyone may not have beautifier plugins installed in their editor. So sometimes
 messy. And it's a pain to beautify all your files in one go. Cleanify solves that problem by allowing u to clean all your web files right from the command
 line.
 
+What's even better ? Cleanify **asynchronously** cleans up your files, so it's fast, even for large projects.
+
 ##Installation
 
 First install dependencies. To do that run 
