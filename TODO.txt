@@ -1,2 +1,3 @@
 - Logging
 - Remove UNIX dependencies to make it run in Windows
+- Add configuration file
