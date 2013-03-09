@@ -1,0 +1,2 @@
+- Logging
+- Remove UNIX dependencies to make it run in Windows
