@@ -97,27 +97,18 @@ class Cleanify():
         hlen = len(self.htmlfiles)
         jlen = len(self.jsfiles)
         clen = len(self.cssfiles)
-        hc = 0
-        jc = 0
-        cc = 0
-        print self.htmlfiles
         if hlen > 0 or jlen > 0 or clen > 0:
-            print "we've got some files"
             workers = 5
             print workers, " workers created"
             with ThreadPoolExecutor(max_workers=workers) as executor:
                 for hfile in self.htmlfiles:
                     executor.submit(self.clean_html, hfile)
-                    hc += 1
                 for jfile in self.jsfiles:
                     executor.submit(self.clean_js, jfile)
-                    jc += 1
                 for cfile in self.cssfiles:
                     executor.submit(self.clean_css, cfile)
-                    cc += 1
                 executor.shutdown()
             print "Cleaning completed."
-            print "Cleaned ", hc, " html files, ", jc, " js files and ", cc, " css files"
         else:
             print "No html, js or css files found."
             sys.exit(1)
