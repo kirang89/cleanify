@@ -61,7 +61,8 @@ class Cleanify():
             reader = open(htmlfile, 'r')
             content = reader.read()
             reader.close()
-            document, errors = tidy.tidy_document(content, options=tidy_options)
+            document, errors = tidy.tidy_document(content,
+                                                  options=tidy_options)
             if document:
                 writer = open(htmlfile, 'w')
                 writer.write(document)
